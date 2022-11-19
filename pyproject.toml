@@ -1,0 +1,23 @@
+[project]
+name = "using-pdm-flask"
+version = "0.0.1"
+description = ""
+authors = [{ name = "Neo Pan", email = "panlw@kinco.cn" }]
+dependencies = [
+    "flask>=2.2.2",
+    "autopep8>=2.0.0",
+    "python-dotenv>=0.21.0",
+]
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pdm]
+
+[tool.pdm.scripts.start]
+cmd = "flask run -p 54321"
+env = { FLASK_APP = "app/app.py" }
+env_file = ".env"
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
